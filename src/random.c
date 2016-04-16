@@ -36,7 +36,7 @@ int is_prime(uint a) {
     int i;
 
     /* On regarde s'il existe un diviseur au nombre. */
-    for(i = 2; i < sqrt(a); i++)
+    for(i = 2; i <= sqrt(a); i++)
         if(a%i == 0)
             return FALSE;
 
@@ -61,7 +61,7 @@ int is_knuth(uint a, uint c, uint m) {
         /* On vérifie que p|m. */
         if(m%p != 0)
             continue;
-
+        
         /* On s'assure que p|(a-1). */
         if((a-1)%p != 0) {
             ERROR("Le deuxième critère de Knuth n'est pas respecté : "
